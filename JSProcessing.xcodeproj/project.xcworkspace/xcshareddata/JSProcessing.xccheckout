@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F1DBA182-FBF0-49FF-B83D-F02924D2D98B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>JSProcessing</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7E5C5EB0-1C34-44CA-B86E-912F610D12E4</key>
+		<string>ssh://git.srv.kkcorp/ios_joehsieh</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>JSProcessing/JSProcessing.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7E5C5EB0-1C34-44CA-B86E-912F610D12E4</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://git.srv.kkcorp/ios_joehsieh</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7E5C5EB0-1C34-44CA-B86E-912F610D12E4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7E5C5EB0-1C34-44CA-B86E-912F610D12E4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ios_joehsieh</string>
+		</dict>
+	</array>
+</dict>
+</plist>
