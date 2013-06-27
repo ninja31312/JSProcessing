@@ -8,7 +8,7 @@
     NSString *scriptString;
 }
 
-+ (instancetype)sharedLoader;
++ (instancetype)sharedInterpreter;
 
 - (void)evaluateJSString:(NSString *)inString;
 @end

@@ -1,9 +1,10 @@
 
 // JSProcessing will redraw every 1 sec.
-var draw = function(){
+function draw()
+{
 	var totalParts = 10;
-	var xStep = canvasWidth()/totalParts;
-	var yStep = canvasHeight()/totalParts;
+	var xStep = width/totalParts;
+	var yStep = height/totalParts;
 	for(var i = 0 ; i < totalParts ; i++){
 		for(var j = 0; j <totalParts; j++){
 			if((i+j)%2 == 0){

@@ -1,6 +1,7 @@
 
 // JSProcessing will redraw every 1 sec.
-var draw = function(){
+function draw()
+{
     // draw background image
     drawImage(110,180,100,100,'apple.png');
     

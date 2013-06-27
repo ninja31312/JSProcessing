@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3919231C177BE57400DBA56F /* simpleGame.js in Resources */ = {isa = PBXBuildFile; fileRef = 3919231B177BE55B00DBA56F /* simpleGame.js */; };
 		393E1A951777FC7A0063A593 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 393E1A941777FC7A0063A593 /* Foundation.framework */; };
 		393E1A971777FC7A0063A593 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 393E1A961777FC7A0063A593 /* CoreGraphics.framework */; };
 		393E1A991777FC7A0063A593 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 393E1A981777FC7A0063A593 /* UIKit.framework */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3919231B177BE55B00DBA56F /* simpleGame.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = simpleGame.js; sourceTree = "<group>"; };
 		393E1A911777FC7A0063A593 /* JSProcessing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSProcessing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		393E1A941777FC7A0063A593 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		393E1A961777FC7A0063A593 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -146,6 +148,7 @@
 		393E1A9B1777FC7A0063A593 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3919231B177BE55B00DBA56F /* simpleGame.js */,
 				39725EBF177A8FDF005CA47E /* checkeredFlag.js */,
 				39725EB61779800F005CA47E /* clock.js */,
 				39725EBD1779A1C4005CA47E /* apple.png */,
@@ -281,6 +284,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3919231C177BE57400DBA56F /* simpleGame.js in Resources */,
 				39725EC0177A8FEB005CA47E /* checkeredFlag.js in Resources */,
 				39725EB717798164005CA47E /* clock.js in Resources */,
 				393E1AB01777FC7A0063A593 /* Images.xcassets in Resources */,

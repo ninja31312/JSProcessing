@@ -7,11 +7,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	NSString *path = [[NSBundle mainBundle] pathForResource:@"/checkeredFlag" ofType:@"js"];
+	NSString *path = [[NSBundle mainBundle] pathForResource:@"/simpleGame" ofType:@"js"];
     NSString *defaultString = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
     
     [_scriptTextView setText:defaultString];
-	[[NJJavascriptInterpreter sharedLoader] evaluateJSString:_scriptTextView.text];
+	[[NJJavascriptInterpreter sharedInterpreter] evaluateJSString:_scriptTextView.text];
     
     [self _registerObsever];
 	// Do any additional setup after loading the view, typically from a nib.
@@ -32,7 +32,7 @@
 
 - (void)textViewDidChange:(UITextView *)textView
 {
-	[[NJJavascriptInterpreter sharedLoader] evaluateJSString:_scriptTextView.text];
+	[[NJJavascriptInterpreter sharedInterpreter] evaluateJSString:_scriptTextView.text];
 }
 
 - (void)keyboardDidShow:(NSNotification *)notification

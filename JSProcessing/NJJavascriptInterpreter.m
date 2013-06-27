@@ -7,15 +7,17 @@ static NJJavascriptInterpreter *jsInterpreter = nil;
 
 - (instancetype)_init;
 - (void)_interpretJSFuctionName;
+- (void)_setShoudDraw:(BOOL)inShouldDraw;
 
 @end
 
 @implementation NJJavascriptInterpreter
 {
 	JSContext *_jsContext;
+	BOOL _isLoop;
 }
 
-+(instancetype)sharedLoader
++(instancetype)sharedInterpreter
 {
     if (!jsInterpreter) {
         jsInterpreter = [[NJJavascriptInterpreter alloc] _init];
@@ -37,6 +39,7 @@ static NJJavascriptInterpreter *jsInterpreter = nil;
 {
 	self = [super init];
     if (self) {
+		_isLoop = YES;
 		_jsContext = [[JSContext alloc] init];
 		[self _interpretJSFuctionName];
     }
@@ -63,6 +66,10 @@ static NJJavascriptInterpreter *jsInterpreter = nil;
 		UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(x - width / 2, y - height / 2, width, height)];
 		[path stroke];
 	};
+	_jsContext[@"ellipseFill"] = ^(CGFloat x, CGFloat y, CGFloat width, CGFloat height){
+		UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(x - width / 2, y - height / 2, width, height)];
+		[path fill];
+	};
     _jsContext[@"drawString"] = ^(CGFloat x, CGFloat y, CGFloat width, CGFloat height, NSString *inString){
 		CGRect rect = CGRectMake(x, y, width, height);
 		[inString drawInRect:rect withAttributes:nil];
@@ -79,28 +86,68 @@ static NJJavascriptInterpreter *jsInterpreter = nil;
 		[path closePath];
 		[path stroke];
 	};
-	_jsContext[@"canvasWidth"] = ^(){
-        return 	[[UIScreen mainScreen] bounds].size.width;
-	};
-	_jsContext[@"canvasHeight"] = ^(){
-        return 	[[UIScreen mainScreen] bounds].size.height;
-	};
+	
+	_jsContext[@"width"] = [NSNumber numberWithFloat: [[UIScreen mainScreen] bounds].size.width];
+	_jsContext[@"height"] = [NSNumber numberWithFloat:[[UIScreen mainScreen] bounds].size.height];
+	
 	_jsContext[@"drawImage"] = ^(CGFloat x, CGFloat y, CGFloat width, CGFloat height, NSString *imageName){
         UIImage *image = [UIImage imageNamed:imageName];
 		[image drawInRect:CGRectMake(x, y, width, height)];
+	};
+	_jsContext[@"dist"] = ^(CGFloat x1, CGFloat y1, CGFloat x2, CGFloat y2){
+		double dx = x2 - x1;
+		double dy = y2 - y1;
+		double distance = sqrt(dx*dx + dy*dy);
+		return distance;
+	};
+	__block id this = self;
+	_jsContext[@"loop"] = ^(void){
+		[this _setShoudDraw:YES];
+	};
+	_jsContext[@"noLoop"] = ^(void){
+		[this _setShoudDraw:NO];
 	};
 	_jsContext[@"log"] = ^(NSString *message){
 		NSLog(@"message %@", message);
 	};
 }
 
+- (void)_setShoudDraw:(BOOL)inShouldDraw
+{
+	_isLoop = inShouldDraw;
+}
+
 #pragma mark -
 #pragma mark NJViewDelegate
 
+- (void)NJViewDidInit:(NJView *)inView
+{
+	JSValue *function = _jsContext[@"setUp"];
+    [function callWithArguments:nil];
+}
+
 - (void)NJViewDidStartDrawRect:(NJView *)inView
 {
+	if (!_isLoop) {
+		return;
+	}
 	JSValue *function = _jsContext[@"draw"];
     [function callWithArguments:nil];
+}
+
+- (void)NJView:(NJView *)inView didHitPoint:(CGPoint)point
+{
+	JSValue *function = _jsContext[@"mousePressed"];
+	NSNumber *x = [NSNumber numberWithFloat:point.x];
+	NSNumber *y = [NSNumber numberWithFloat:point.y];
+	_jsContext[@"mouseX"] = x;
+	_jsContext[@"mouseY"] = y;
+    [function callWithArguments:nil];
+}
+
+- (BOOL)NJViewShouldDraw:(NJView *)inView
+{
+	return _isLoop;
 }
 
 @end
