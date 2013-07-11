@@ -2,6 +2,7 @@
 #import "NJJavascriptInterpreter.h"
 
 static NJJavascriptInterpreter *jsInterpreter = nil;
+NSString *const kSwipeNotification = @"SwipeNotidicationName";
 
 @interface NJJavascriptInterpreter(Privates)
 
@@ -42,6 +43,7 @@ static NJJavascriptInterpreter *jsInterpreter = nil;
 		_isLoop = YES;
 		_jsContext = [[JSContext alloc] init];
 		[self _interpretJSFuctionName];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleSwipeAction:) name:kSwipeNotification object:nil];
     }
     return self;
 }
@@ -115,6 +117,11 @@ static NJJavascriptInterpreter *jsInterpreter = nil;
 - (void)_setShoudDraw:(BOOL)inShouldDraw
 {
 	_isLoop = inShouldDraw;
+}
+
+- (void)handleSwipeAction:(NSNotification*)notification {
+    UISwipeGestureRecognizer *swipeGestureRecognizer = [notification object];
+    _jsContext[@"currentDirection"] = @([swipeGestureRecognizer direction]);
 }
 
 #pragma mark -

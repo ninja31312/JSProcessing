@@ -29,6 +29,7 @@
 		39725EB717798164005CA47E /* clock.js in Resources */ = {isa = PBXBuildFile; fileRef = 39725EB61779800F005CA47E /* clock.js */; };
 		39725EBE1779A1C4005CA47E /* apple.png in Resources */ = {isa = PBXBuildFile; fileRef = 39725EBD1779A1C4005CA47E /* apple.png */; };
 		39725EC0177A8FEB005CA47E /* checkeredFlag.js in Resources */ = {isa = PBXBuildFile; fileRef = 39725EBF177A8FDF005CA47E /* checkeredFlag.js */; };
+		5388F386178C3F7C000F4FC3 /* greedySnake.js in Resources */ = {isa = PBXBuildFile; fileRef = 5388F385178C3A3D000F4FC3 /* greedySnake.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		39725EB61779800F005CA47E /* clock.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = clock.js; sourceTree = "<group>"; };
 		39725EBD1779A1C4005CA47E /* apple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apple.png; sourceTree = "<group>"; };
 		39725EBF177A8FDF005CA47E /* checkeredFlag.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = checkeredFlag.js; sourceTree = "<group>"; };
+		5388F385178C3A3D000F4FC3 /* greedySnake.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = greedySnake.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +104,6 @@
 		393E1A881777FC7A0063A593 = {
 			isa = PBXGroup;
 			children = (
-				3944D60917781CC800240908 /* script */,
 				393E1A9A1777FC7A0063A593 /* JSProcessing */,
 				393E1ABC1777FC7B0063A593 /* JSProcessingTests */,
 				393E1A931777FC7A0063A593 /* Frameworks */,
@@ -148,9 +149,7 @@
 		393E1A9B1777FC7A0063A593 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3919231B177BE55B00DBA56F /* simpleGame.js */,
-				39725EBF177A8FDF005CA47E /* checkeredFlag.js */,
-				39725EB61779800F005CA47E /* clock.js */,
+				3944D60917781CC800240908 /* script */,
 				39725EBD1779A1C4005CA47E /* apple.png */,
 				393E1A9C1777FC7A0063A593 /* JSProcessing-Info.plist */,
 				393E1A9D1777FC7A0063A593 /* InfoPlist.strings */,
@@ -181,9 +180,12 @@
 		3944D60917781CC800240908 /* script */ = {
 			isa = PBXGroup;
 			children = (
+				3919231B177BE55B00DBA56F /* simpleGame.js */,
+				39725EBF177A8FDF005CA47E /* checkeredFlag.js */,
+				39725EB61779800F005CA47E /* clock.js */,
+				5388F385178C3A3D000F4FC3 /* greedySnake.js */,
 			);
 			name = script;
-			path = JSProcessing;
 			sourceTree = "<group>";
 		};
 		39725EB01779382F005CA47E /* Controllers */ = {
@@ -284,6 +286,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5388F386178C3F7C000F4FC3 /* greedySnake.js in Resources */,
 				3919231C177BE57400DBA56F /* simpleGame.js in Resources */,
 				39725EC0177A8FEB005CA47E /* checkeredFlag.js in Resources */,
 				39725EB717798164005CA47E /* clock.js in Resources */,

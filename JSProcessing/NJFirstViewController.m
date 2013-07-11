@@ -7,7 +7,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	NSString *path = [[NSBundle mainBundle] pathForResource:@"/simpleGame" ofType:@"js"];
+	NSString *path = [[NSBundle mainBundle] pathForResource:@"/greedySnake" ofType:@"js"];
     NSString *defaultString = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
     
     [_scriptTextView setText:defaultString];

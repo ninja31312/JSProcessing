@@ -3,7 +3,6 @@
 
 @implementation NJView
 
-
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -53,5 +52,6 @@
 	}
 	[super setNeedsDisplay];
 }
+
 @synthesize delegate;
 @end
