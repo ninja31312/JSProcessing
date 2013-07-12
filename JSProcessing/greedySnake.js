@@ -17,7 +17,6 @@ Array.prototype.contains = function(obj) {
     var i = this.length;
     while (i--) {
         if (this[i]["x"] == obj["x"] && this[i]["y"] == obj["y"]) {
-            log(i);
             return true;
         }
     }
@@ -64,38 +63,27 @@ function setUp()
 
 function draw()
 {
-	var step = 20;
-    var xParts = Math.ceil(width/step);
-    var yParts = Math.ceil(height/step);
+	var distancePerStep = 20;
+    var totalXSteps = 15;
+    var totalYSteps = 25;
+    var initXStep = 1;
+    var initYStep = 1;
     
-	for(var i = 0 ; i < xParts ; i++){
-		for(var j = 0; j < yParts; j++){
-//            location = location(i,j);
-//            if(_shouldGameOver(snakeLocations, location(i,j))){
-//                noLoop();
-//            }
-			if(snakeLocations.contains(location(i,j))){
+	for(var i = initXStep ; i < totalXSteps ; i++){
+		for(var j = initYStep; j < totalYSteps; j++){
+            color(0,0,255);
+            rectStroke(i*distancePerStep,j*distancePerStep,distancePerStep,distancePerStep);
+            //            log(location);
+            if(snakeLocations.contains(location(i,j))){
 				//black
 				color(0,0,0);
-				rectFill(i*step,j*step,step,step);
+				rectFill(i*distancePerStep,j*distancePerStep,distancePerStep,distancePerStep);
 
                 if(fruitLocations.contains(location(i,j))){
                     var indexOfFruit = fruitLocations.indexOf(location(i,j));
                     fruitLocations.splice(indexOfFruit,1);
                     snakeLocations.push(location(i,j));
                 }
-//                else{
-//                    var totalCount = 0;
-//                    for(var index = 0 ; index < snakeLocations.length ; index ++){
-//                        if(snakeLocations[index]["x"] == i && snakeLocations[index]["y"] == j){
-//                            totalCount +=1;
-//                        }
-//                    }
-//                    if(totalCount == 2){
-//                        noLoop();
-//                    }
-//                }
-                
 			}else{
                 if(fruitLocations.length < 3){
                     if(Math.floor(Math.random() * 100) == 5){
@@ -105,15 +93,15 @@ function draw()
                 else{
                     //white
                     color(255,255,255);
-                    rectFill(i*step,j*step,step,step);
+                    rectFill(i*distancePerStep,j*distancePerStep,distancePerStep,distancePerStep);
                 }
 			}
 		}
 	}
     for(var k = 0 ; k < fruitLocations.length ; k ++){
-        //red
+        //fruits
         color(255,0,0);
-        ellipseFill(fruitLocations[k]["x"] * step + 5,fruitLocations[k]["y"] * step + 3,step,step);
+        ellipseFill(fruitLocations[k]["x"] * distancePerStep + (distancePerStep / 2),fruitLocations[k]["y"] * distancePerStep + (distancePerStep / 2), distancePerStep, distancePerStep);
     }
     snakeLocations.shift();
     headLocation = snakeLocations.getLast()
@@ -121,24 +109,23 @@ function draw()
     switch(currentDirection){
         case  DirectionEnum.UP:
             x = headLocation["x"];
-             headLocation["y"] <= 0 ? y = yParts : y = headLocation["y"] - 1;
+             headLocation["y"] <= initYStep ? y = totalYSteps - 1 : y = headLocation["y"] - 1;
             break;
         case  DirectionEnum.DOWN:
             x = headLocation["x"];
-             headLocation["y"] >= yParts ? y = 0 : y = headLocation["y"] + 1;
+             headLocation["y"] >= totalYSteps ? y = initYStep : y = headLocation["y"] + 1;
             break;
         case  DirectionEnum.LEFT:
-            log(headLocation["x"]);
-            headLocation["x"] <= 0 ? x = xParts : x = headLocation["x"] - 1;
+            headLocation["x"] <= initXStep ? x = totalXSteps - 1 : x = headLocation["x"] - 1;
             y = headLocation["y"];
             break;
         case  DirectionEnum.RIGHT:
-            headLocation["x"] >= xParts ? x = 0 : x = headLocation["x"] + 1;
+            headLocation["x"] >= totalXSteps ? x = initXStep : x = headLocation["x"] + 1;
             y = headLocation["y"];
             break;
         default:
-            x = 0;
-            y = 0;
+            x = initXStep;
+            y = initYStep;
             break;
     }
     snakeLocations.push(location(x, y));

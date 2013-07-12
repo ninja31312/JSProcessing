@@ -3,6 +3,4 @@
 #import "NJView.h"
 
 @interface NJSecondViewController : UIViewController
-
-
 @end
