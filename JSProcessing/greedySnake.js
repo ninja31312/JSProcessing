@@ -4,7 +4,7 @@
 var DirectionEnum = {"UP":4, "DOWN":8, "LEFT":2, "RIGHT":1};
 var currentDirection = DirectionEnum.RIGHT;
 
-function location(x, y) {
+function locationMake(x, y) {
     x = Math.ceil(x);
     y = Math.ceil(y);
     return {
@@ -43,51 +43,49 @@ Array.prototype.getLast = function() {
 var snakeLocations = [];
 var fruitLocations = [];
 
-//function _shouldGameOver(var snakeLocations, var location)
-//{
-//    var totalCount = 0;
-//    for(var i = 0 ; i < snakeLocations.length ; i ++){
-//        if(snakeLocations.contains(location)){
-//            totalCount +=1;
-//        }
-//    }
-//    return totalCount > 1;
-//}
+function _shouldGameOver(snakeLocations, location)
+{
+    for(var i = 0 ; i < snakeLocations.length ; i ++){
+        if(snakeLocations.contains(location)){
+            return true;
+        }
+    }
+    return false;
+}
 
 function setUp()
 {
-    for(var i = 0 ; i < 5 ; i++){
-        snakeLocations[i] = location(i,10);
+    for(var i = 0 ; i <13 ; i++){
+        snakeLocations[i] = locationMake(i,10);
     }
 }
 
 function draw()
 {
 	var distancePerStep = 20;
-    var totalXSteps = 15;
-    var totalYSteps = 25;
+    var totalXSteps = 14;
+    var totalYSteps = 24;
     var initXStep = 1;
     var initYStep = 1;
     
-	for(var i = initXStep ; i < totalXSteps ; i++){
-		for(var j = initYStep; j < totalYSteps; j++){
+	for(var i = initXStep ; i <= totalXSteps ; i++){
+		for(var j = initYStep; j <= totalYSteps; j++){
             color(0,0,255);
             rectStroke(i*distancePerStep,j*distancePerStep,distancePerStep,distancePerStep);
-            //            log(location);
-            if(snakeLocations.contains(location(i,j))){
-				//black
-				color(0,0,0);
+            location = locationMake(i, j);
+            if(snakeLocations.contains(location)){
+                color(0,0,0);
 				rectFill(i*distancePerStep,j*distancePerStep,distancePerStep,distancePerStep);
 
-                if(fruitLocations.contains(location(i,j))){
-                    var indexOfFruit = fruitLocations.indexOf(location(i,j));
+                if(fruitLocations.contains(location)){
+                    var indexOfFruit = fruitLocations.indexOf(location);
                     fruitLocations.splice(indexOfFruit,1);
-                    snakeLocations.push(location(i,j));
+                    snakeLocations.push(location);
                 }
 			}else{
                 if(fruitLocations.length < 3){
                     if(Math.floor(Math.random() * 100) == 5){
-                        fruitLocations.push(location(i,j));
+                        fruitLocations.push(location);
                     }
                 }
                 else{
@@ -128,5 +126,8 @@ function draw()
             y = initYStep;
             break;
     }
-    snakeLocations.push(location(x, y));
+    if(_shouldGameOver(snakeLocations, locationMake(x, y))){
+        noLoop();
+    }
+    snakeLocations.push(locationMake(x, y));
 };
