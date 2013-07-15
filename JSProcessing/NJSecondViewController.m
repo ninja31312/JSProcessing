@@ -1,6 +1,6 @@
 
 #import "NJSecondViewController.h"
-#import "NJJavascriptInterpreter.h"
+#import "JSServiceProvider.h"
 
 @implementation NJSecondViewController
 {
@@ -17,7 +17,7 @@
 {
     [super viewDidLoad];
     NJView *view = (NJView *)self.view;
-    view.delegate = [NJJavascriptInterpreter sharedInterpreter];
+    view.delegate = [JSServiceProvider sharedInterpreter];
     [self addGestureRecognizerByDirection:UISwipeGestureRecognizerDirectionRight];
     [self addGestureRecognizerByDirection:UISwipeGestureRecognizerDirectionLeft];
     [self addGestureRecognizerByDirection:UISwipeGestureRecognizerDirectionUp];

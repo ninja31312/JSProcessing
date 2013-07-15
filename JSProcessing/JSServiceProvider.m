@@ -1,10 +1,10 @@
 
-#import "NJJavascriptInterpreter.h"
+#import "JSServiceProvider.h"
 
-static NJJavascriptInterpreter *jsInterpreter = nil;
+static JSServiceProvider *jsInterpreter = nil;
 NSString *const kSwipeNotification = @"SwipeNotidicationName";
 
-@interface NJJavascriptInterpreter(Privates)
+@interface JSServiceProvider(Privates)
 
 - (instancetype)_init;
 - (void)_interpretJSFuctionName;
@@ -12,7 +12,7 @@ NSString *const kSwipeNotification = @"SwipeNotidicationName";
 
 @end
 
-@implementation NJJavascriptInterpreter
+@implementation JSServiceProvider
 {
 	JSContext *_jsContext;
 	BOOL _isLoop;
@@ -21,7 +21,7 @@ NSString *const kSwipeNotification = @"SwipeNotidicationName";
 +(instancetype)sharedInterpreter
 {
     if (!jsInterpreter) {
-        jsInterpreter = [[NJJavascriptInterpreter alloc] _init];
+        jsInterpreter = [[JSServiceProvider alloc] _init];
     }
     return jsInterpreter;
 }

@@ -1,6 +1,6 @@
 
 #import "NJFirstViewController.h"
-#import "NJJavascriptInterpreter.h"
+#import "JSServiceProvider.h"
 
 @implementation NJFirstViewController
 
@@ -11,7 +11,7 @@
     NSString *defaultString = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
     
     [_scriptTextView setText:defaultString];
-	[[NJJavascriptInterpreter sharedInterpreter] evaluateJSString:_scriptTextView.text];
+	[[JSServiceProvider sharedInterpreter] evaluateJSString:_scriptTextView.text];
     
     [self _registerObsever];
 	// Do any additional setup after loading the view, typically from a nib.
@@ -32,7 +32,7 @@
 
 - (void)textViewDidChange:(UITextView *)textView
 {
-	[[NJJavascriptInterpreter sharedInterpreter] evaluateJSString:_scriptTextView.text];
+	[[JSServiceProvider sharedInterpreter] evaluateJSString:_scriptTextView.text];
 }
 
 - (void)keyboardDidShow:(NSNotification *)notification

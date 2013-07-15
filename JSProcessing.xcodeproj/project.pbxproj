@@ -24,7 +24,7 @@
 		393E1AC11777FC7B0063A593 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 393E1ABF1777FC7B0063A593 /* InfoPlist.strings */; };
 		393E1AC31777FC7B0063A593 /* JSProcessingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 393E1AC21777FC7B0063A593 /* JSProcessingTests.m */; };
 		393E1ACD177815AC0063A593 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 393E1ACC177815AC0063A593 /* JavaScriptCore.framework */; };
-		393E1AD017781B840063A593 /* NJJavascriptInterpreter.m in Sources */ = {isa = PBXBuildFile; fileRef = 393E1ACF177816990063A593 /* NJJavascriptInterpreter.m */; };
+		393E1AD017781B840063A593 /* JSServiceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 393E1ACF177816990063A593 /* JSServiceProvider.m */; };
 		3944D61317783FFE00240908 /* NJView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3944D61217783CEB00240908 /* NJView.m */; };
 		39725EB717798164005CA47E /* clock.js in Resources */ = {isa = PBXBuildFile; fileRef = 39725EB61779800F005CA47E /* clock.js */; };
 		39725EBE1779A1C4005CA47E /* apple.png in Resources */ = {isa = PBXBuildFile; fileRef = 39725EBD1779A1C4005CA47E /* apple.png */; };
@@ -66,8 +66,8 @@
 		393E1AC01777FC7B0063A593 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		393E1AC21777FC7B0063A593 /* JSProcessingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSProcessingTests.m; sourceTree = "<group>"; };
 		393E1ACC177815AC0063A593 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		393E1ACE177816990063A593 /* NJJavascriptInterpreter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NJJavascriptInterpreter.h; sourceTree = "<group>"; };
-		393E1ACF177816990063A593 /* NJJavascriptInterpreter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NJJavascriptInterpreter.m; sourceTree = "<group>"; };
+		393E1ACE177816990063A593 /* JSServiceProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSServiceProvider.h; sourceTree = "<group>"; };
+		393E1ACF177816990063A593 /* JSServiceProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSServiceProvider.m; sourceTree = "<group>"; };
 		3944D61117783CEB00240908 /* NJView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NJView.h; sourceTree = "<group>"; };
 		3944D61217783CEB00240908 /* NJView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NJView.m; sourceTree = "<group>"; };
 		39725EB61779800F005CA47E /* clock.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = clock.js; sourceTree = "<group>"; };
@@ -195,8 +195,8 @@
 				393E1AAA1777FC7A0063A593 /* NJFirstViewController.m */,
 				393E1AAC1777FC7A0063A593 /* NJSecondViewController.h */,
 				393E1AAD1777FC7A0063A593 /* NJSecondViewController.m */,
-				393E1ACE177816990063A593 /* NJJavascriptInterpreter.h */,
-				393E1ACF177816990063A593 /* NJJavascriptInterpreter.m */,
+				393E1ACE177816990063A593 /* JSServiceProvider.h */,
+				393E1ACF177816990063A593 /* JSServiceProvider.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -313,7 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3944D61317783FFE00240908 /* NJView.m in Sources */,
-				393E1AD017781B840063A593 /* NJJavascriptInterpreter.m in Sources */,
+				393E1AD017781B840063A593 /* JSServiceProvider.m in Sources */,
 				393E1AA51777FC7A0063A593 /* NJAppDelegate.m in Sources */,
 				393E1AAB1777FC7A0063A593 /* NJFirstViewController.m in Sources */,
 				393E1AAE1777FC7A0063A593 /* NJSecondViewController.m in Sources */,

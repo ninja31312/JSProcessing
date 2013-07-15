@@ -3,34 +3,34 @@
 <plist version="1.0">
 <dict>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>418E00F4-8198-4503-95CE-B9D4421184C6</string>
+	<string>76A1110C-8D3F-4F33-958D-CF6DA9EEEA7B</string>
 	<key>IDESourceControlProjectName</key>
 	<string>JSProcessing</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>E1AF2AC0-3973-4854-A6FB-84C2A68D985E</key>
-		<string>ssh://github.com/ninja31312/JSProcessing.git</string>
+		<key>480678DE-B24E-4C10-9269-19C94A0FAC1F</key>
+		<string>https://github.com/ninja31312/JSProcessing.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>JSProcessing.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>E1AF2AC0-3973-4854-A6FB-84C2A68D985E</key>
+		<key>480678DE-B24E-4C10-9269-19C94A0FAC1F</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/ninja31312/JSProcessing.git</string>
+	<string>https://github.com/ninja31312/JSProcessing.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>E1AF2AC0-3973-4854-A6FB-84C2A68D985E</string>
+	<string>480678DE-B24E-4C10-9269-19C94A0FAC1F</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>E1AF2AC0-3973-4854-A6FB-84C2A68D985E</string>
+			<string>480678DE-B24E-4C10-9269-19C94A0FAC1F</string>
 			<key>IDESourceControlWCCName</key>
 			<string>JSProcessing</string>
 		</dict>

@@ -4,7 +4,7 @@
 #import "NJView.h"
 extern NSString *const kSwipeNotification;
 
-@interface NJJavascriptInterpreter : NSObject <NJViewDelegate>
+@interface JSServiceProvider : NSObject <NJViewDelegate>
 {
     NSString *scriptString;
 }

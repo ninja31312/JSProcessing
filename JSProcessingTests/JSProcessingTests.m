@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "NJJavascriptInterpreter.h"
+#import "JSServiceProvider.h"
 
 @interface JSProcessingTests : XCTestCase
 
