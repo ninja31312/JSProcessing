@@ -2,4 +2,4 @@ We simulate processing (http://www.processing.org) by JavascriptCore which must 
 
 We make a cool prototype. :)
 
-Enjoy it!  
+Enjoy it! 
